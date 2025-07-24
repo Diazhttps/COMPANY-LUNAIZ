@@ -1,0 +1,64 @@
+/* Registro solo */
+
+.login-container-register {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #283e6b, #1f2f5a); /* azul oscuro tonalidad media */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #fff;
+}
+
+.login-box-register {
+  background: rgba(10, 25, 60, 0.9);
+  padding: 40px;
+  border-radius: 15px;
+  box-shadow: 0 8px 32px rgba(20, 35, 70, 0.8);
+  width: 320px;
+  text-align: center;
+}
+
+.login-box-register h2 {
+  margin-bottom: 30px;
+  font-weight: 700;
+  font-size: 2rem;
+}
+
+.login-box-register input {
+  width: 100%;
+  padding: 12px 15px;
+  margin-bottom: 20px;
+  border: none;
+  border-radius: 10px;
+  outline: none;
+  font-size: 1rem;
+  background-color: rgba(255, 255, 255, 0.15);
+  color: #fff;
+  transition: background-color 0.3s ease;
+}
+
+.login-box-register input::placeholder {
+  color: #bbb;
+}
+
+.login-box-register input:focus {
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+.login-box-register button {
+  width: 100%;
+  padding: 12px 15px;
+  border-radius: 10px;
+  border: none;
+  background-color: #61dafb;
+  color: #1a1a1a;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.login-box-register button:hover {
+  background-color: #21a1f1;
+}
