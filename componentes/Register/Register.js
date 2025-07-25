@@ -76,7 +76,7 @@ function Register({ onChangeView }) {
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
         >
-          ¿Ya tienes cuenta? Inicia sesión aquí
+          ¿Ya tienes cuenta? Inicia sesión aquí 
         </motion.button>
 
         {message && <p style={{ marginTop: '15px' }}>{message}</p>}
