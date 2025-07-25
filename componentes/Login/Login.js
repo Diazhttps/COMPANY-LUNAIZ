@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import './Login.css';
-import { motion } from 'framer-motion'; // <-- Corrección: de 'motion/react' a 'framer-motion'
+import { motion } from 'framer-motion'; 
 import 'animate.css';
 
 function Login({ onSuccess, onChangeView }) {
@@ -38,10 +38,10 @@ function Login({ onSuccess, onChangeView }) {
     <div className="App">
       <header className="App-header">
         <motion.h2
-          className="animate__animated animate__fadeInDown"
+          className="animate__animated animate__lightSpeedInLeft"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ delay: 0.2 }}
+          transition={{ delay: 0.3 }}
         >
           Iniciar Sesión
         </motion.h2>
