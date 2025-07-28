@@ -1,0 +1,446 @@
+/*variables animadas y keyframes  */
+@keyframes hero-gradient-animation {
+    0% {
+        --c-0: hsla(269.68750000000006, 80%, 47%, 1);
+        --x-0: 13%;
+        --s-start-0: 9%;
+        --s-end-0: 58.89119889119889%;
+        --y-0: 16%;
+        --x-1: 14%;
+        --c-1: hsla(185.37735849056605, 89%, 53%, 1);
+        --y-1: 89%;
+        --s-start-1: 9%;
+        --s-end-1: 58.89119889119889%;
+        --s-start-2: 2%;
+        --s-end-2: 60%;
+        --x-2: 23%;
+        --c-2: hsla(264, 73%, 3%, 1);
+        --y-2: 23%;
+    }
+
+    100% {
+        --c-0: hsla(239.568345323741, 65%, 41%, 1);
+        --x-0: 95%;
+        --s-start-0: 4%;
+        --s-end-0: 60%;
+        --y-0: 18%;
+        --x-1: 97%;
+        --c-1: hsla(270.5960264900662, 75%, 39%, 1);
+        --y-1: 47%;
+        --s-start-1: 4.5991935069083505%;
+        --s-end-1: 60%;
+        --s-start-2: 4%;
+        --s-end-2: 73%;
+        --x-2: 92%;
+        --c-2: hsla(42.950819672131146, 100%, 35%, 1);
+        --y-2: 91%;
+    }
+}
+
+@property --c-0 {
+    syntax: '<color>';
+    inherits: false;
+    initial-value: hsla(269.68750000000006, 80%, 47%, 1)
+}
+
+@property --x-0 {
+    syntax: '<percentage>';
+    inherits: false;
+    initial-value: 13%
+}
+
+@property --s-start-0 {
+    syntax: '<percentage>';
+    inherits: false;
+    initial-value: 9%
+}
+
+@property --s-end-0 {
+    syntax: '<percentage>';
+    inherits: false;
+    initial-value: 58.89119889119889%
+}
+
+@property --y-0 {
+    syntax: '<percentage>';
+    inherits: false;
+    initial-value: 16%
+}
+
+@property --x-1 {
+    syntax: '<percentage>';
+    inherits: false;
+    initial-value: 14%
+}
+
+@property --c-1 {
+    syntax: '<color>';
+    inherits: false;
+    initial-value: hsla(185.37735849056605, 89%, 53%, 1)
+}
+
+@property --y-1 {
+    syntax: '<percentage>';
+    inherits: false;
+    initial-value: 89%
+}
+
+@property --s-start-1 {
+    syntax: '<percentage>';
+    inherits: false;
+    initial-value: 9%
+}
+
+@property --s-end-1 {
+    syntax: '<percentage>';
+    inherits: false;
+    initial-value: 58.89119889119889%
+}
+
+@property --s-start-2 {
+    syntax: '<percentage>';
+    inherits: false;
+    initial-value: 2%
+}
+
+@property --s-end-2 {
+    syntax: '<percentage>';
+    inherits: false;
+    initial-value: 60%
+}
+
+@property --x-2 {
+    syntax: '<percentage>';
+    inherits: false;
+    initial-value: 23%
+}
+
+@property --c-2 {
+    syntax: '<color>';
+    inherits: false;
+    initial-value: hsla(264, 73%, 3%, 1)
+}
+
+@property --y-2 {
+    syntax: '<percentage>';
+    inherits: false;
+    initial-value: 23%
+}
+
+/*background y contenedor de películas */
+.movies-container {
+  min-height: 100vh;
+  padding: 20px;
+  box-sizing: border-box;
+
+    --c-0: hsla(269.68750000000006, 80%, 47%, 1);
+    --x-0: 13%;
+    --y-0: 16%;
+    --x-1: 14%;
+    --c-1: hsla(185.37735849056605, 89%, 53%, 1);
+    --y-1: 89%;
+    --x-2: 23%;
+    --c-2: hsla(264, 73%, 3%, 1);
+    --y-2: 23%;
+    ;
+    background-color: hsla(272, 86%, 9%, 1);
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 1288 1288' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E"), radial-gradient(circle at var(--x-0) var(--y-0), var(--c-0) var(--s-start-0), transparent var(--s-end-0)), radial-gradient(circle at var(--x-1) var(--y-1), var(--c-1) var(--s-start-1), transparent var(--s-end-1)), radial-gradient(circle at var(--x-2) var(--y-2), var(--c-2) var(--s-start-2), transparent var(--s-end-2));
+    animation: hero-gradient-animation 8s linear infinite alternate;
+    background-blend-mode: overlay, overlay, normal, normal;
+}
+/*.pelicula-card {
+  background: linear-gradient(135deg, #2b2b2b, #1a1a1a);
+  color: #e0e0e0;
+  border-radius: 16px;
+  padding: 20px;
+  margin: 10px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+  transition: transform 0.3s;
+}
+
+/* Colores diferentes por posición */
+.pelicula-card:nth-child(3n + 1) {
+  background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%); /* morado-azul */
+}
+
+.pelicula-card:nth-child(3n + 2) {
+  background: linear-gradient(135deg, #f7971e 0%, #ffd200 100%); /* naranja-amarillo */
+  color: #222; /* texto oscuro para contraste */
+}
+
+.pelicula-card:nth-child(3n + 3) {
+  background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%); /* verde */
+}
+
+/* Hover con animación */
+.pelicula-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5);
+}
+
+/* Animación de entrada */
+@keyframes fadeSlideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.peliculas-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 columnas iguales */
+  gap: 24px;
+  margin-top: 1.5rem;
+}
+
+
+.pelicula-card h3 {
+  color: #ffffff;
+  font-size: 1.4rem;
+  margin-bottom: 10px;
+}
+
+.pelicula-card p {
+  font-size: 14px;
+  color: #cccccc;
+  margin: 4px 0;
+}
+
+.error {
+  color: #854243;
+  background: #a30101;
+  padding: 0.75rem 1rem;
+  border-radius: 10px;
+  margin-top: 1rem;
+}
+
+.paginacion {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  gap: 8px;
+}
+
+.paginacion button {
+  background-color: #eee;
+  border: none;
+  padding: 8px 12px;
+  cursor: pointer;
+  border-radius: 4px;
+  font-weight: bold;
+  transition: background 0.2s;
+}
+
+.paginacion button:hover {
+  background-color: #ccc;
+}
+
+.paginacion button.activo {
+  background-color: #007bff;
+  color: white;
+}
+
+.paginacion {
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.paginacion button {
+  background-color: #f0f0f0;
+  border: 2px solid #ccc;
+  color: #333;
+  padding: 8px 14px;
+  font-size: 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+.paginacion button:hover {
+  background-color: #007bff;
+  color: #fff;
+  border-color: #007bff;
+  transform: scale(1.05);
+}
+
+.paginacion button.activo {
+  background-color: #007bff;
+  color: #fff;
+  font-weight: bold;
+  border-color: #0056b3;
+  transform: scale(1.1);
+}
+
+@keyframes aparecer {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.botones-acciones {
+  margin-top: auto; /* Empuja los botones al fondo del contenedor */
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+}
+
+.botones-acciones button {
+  background-color: #1e88e5;
+  color: white;
+  border: none;
+  padding: 6px 12px;
+  margin-right: 10px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+/* Icono margen */
+.botones-acciones button svg {
+  margin-right: 6px;
+}
+
+/* Botón Editar */
+.botones-acciones button:first-child {
+  background-color: #28a745;
+}
+
+.botones-acciones button:first-child:hover {
+  background-color: #218838;
+  transform: scale(1.15) rotate(-5deg);
+  box-shadow: 0 6px 12px rgba(33, 136, 56, 0.5);
+  transition: transform 0.25s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+}
+.botones-acciones button:hover {
+  opacity: 0.9;
+}
+
+/* Botón Eliminar */
+.botones-acciones button:last-child {
+  background-color: #e53935;
+}
+
+.botones-acciones button:last-child:hover {
+  background-color: #a71d2a;
+  transform: scale(1.15) rotate(5deg);
+  box-shadow: 0 6px 12px rgba(167, 29, 42, 0.5);
+  transition: transform 0.25s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+}
+
+.titulo-container {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.titulo-principal {
+  font-size: 3rem; /* título grande */
+  font-weight: 900;
+  color: #007bff; /* azul vibrante */
+  margin: 0;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.eslogan {
+  font-size: 1.25rem;
+  color: #555;
+  font-style: italic;
+  margin-top: 8px;
+}
+
+.flip-card {
+  background-color: transparent;
+  width: 100%;
+  height: 100%;
+  perspective: 1000px; /* Para efecto 3D */
+}
+
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-card-front, .flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;  
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+.pelicula-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-card-front,
+.flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 15px;
+  backface-visibility: hidden;
+  overflow: hidden;
+}
+
+.flip-card-front {
+  background: linear-gradient(135deg, #4e4376, #2b5876);
+  color: white;
+  padding: 16px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.flip-card-back {
+  background-color: #111; /* oscuro pero no negro absoluto */
+  color: #fff;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;      /* apilar elementos verticalmente */
+  justify-content: space-between; /* separa texto y botones */
+  border-radius: 16px;
+  box-sizing: border-box;
+}
+
+
+.flip-card-back img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain; /* Muestra todo el poster sin recortarlo */
+  padding: 10px;        /* Añade espacio alrededor para que no quede pegado */
+  border-radius: 12px;  /* Mantén bordes suaves */
+  background-color: #000; /* Fondo negro para contraste */
+}
+
+.contenedor-tarjetas {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  padding: 20px;
+}
+.flip-card-back h3 {
+  margin-bottom: 12px;
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #00aaff; /* un color azul vibrante para destacar */
+}
+
+.flip-card-back p {
+  margin: 6px 0;
+  font-size: 1rem;
+  line-height: 1.3;
+  color: #ccc;
+}
