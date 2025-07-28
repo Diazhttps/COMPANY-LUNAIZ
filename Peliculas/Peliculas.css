@@ -1,131 +1,5 @@
 /*variables animadas y keyframes  */
-@keyframes hero-gradient-animation {
-    0% {
-        --c-0: hsla(269.68750000000006, 80%, 47%, 1);
-        --x-0: 13%;
-        --s-start-0: 9%;
-        --s-end-0: 58.89119889119889%;
-        --y-0: 16%;
-        --x-1: 14%;
-        --c-1: hsla(185.37735849056605, 89%, 53%, 1);
-        --y-1: 89%;
-        --s-start-1: 9%;
-        --s-end-1: 58.89119889119889%;
-        --s-start-2: 2%;
-        --s-end-2: 60%;
-        --x-2: 23%;
-        --c-2: hsla(264, 73%, 3%, 1);
-        --y-2: 23%;
-    }
 
-    100% {
-        --c-0: hsla(239.568345323741, 65%, 41%, 1);
-        --x-0: 95%;
-        --s-start-0: 4%;
-        --s-end-0: 60%;
-        --y-0: 18%;
-        --x-1: 97%;
-        --c-1: hsla(270.5960264900662, 75%, 39%, 1);
-        --y-1: 47%;
-        --s-start-1: 4.5991935069083505%;
-        --s-end-1: 60%;
-        --s-start-2: 4%;
-        --s-end-2: 73%;
-        --x-2: 92%;
-        --c-2: hsla(42.950819672131146, 100%, 35%, 1);
-        --y-2: 91%;
-    }
-}
-
-@property --c-0 {
-    syntax: '<color>';
-    inherits: false;
-    initial-value: hsla(269.68750000000006, 80%, 47%, 1)
-}
-
-@property --x-0 {
-    syntax: '<percentage>';
-    inherits: false;
-    initial-value: 13%
-}
-
-@property --s-start-0 {
-    syntax: '<percentage>';
-    inherits: false;
-    initial-value: 9%
-}
-
-@property --s-end-0 {
-    syntax: '<percentage>';
-    inherits: false;
-    initial-value: 58.89119889119889%
-}
-
-@property --y-0 {
-    syntax: '<percentage>';
-    inherits: false;
-    initial-value: 16%
-}
-
-@property --x-1 {
-    syntax: '<percentage>';
-    inherits: false;
-    initial-value: 14%
-}
-
-@property --c-1 {
-    syntax: '<color>';
-    inherits: false;
-    initial-value: hsla(185.37735849056605, 89%, 53%, 1)
-}
-
-@property --y-1 {
-    syntax: '<percentage>';
-    inherits: false;
-    initial-value: 89%
-}
-
-@property --s-start-1 {
-    syntax: '<percentage>';
-    inherits: false;
-    initial-value: 9%
-}
-
-@property --s-end-1 {
-    syntax: '<percentage>';
-    inherits: false;
-    initial-value: 58.89119889119889%
-}
-
-@property --s-start-2 {
-    syntax: '<percentage>';
-    inherits: false;
-    initial-value: 2%
-}
-
-@property --s-end-2 {
-    syntax: '<percentage>';
-    inherits: false;
-    initial-value: 60%
-}
-
-@property --x-2 {
-    syntax: '<percentage>';
-    inherits: false;
-    initial-value: 23%
-}
-
-@property --c-2 {
-    syntax: '<color>';
-    inherits: false;
-    initial-value: hsla(264, 73%, 3%, 1)
-}
-
-@property --y-2 {
-    syntax: '<percentage>';
-    inherits: false;
-    initial-value: 23%
-}
 
 /*background y contenedor de películas */
 .movies-container {
@@ -133,20 +7,9 @@
   padding: 20px;
   box-sizing: border-box;
 
-    --c-0: hsla(269.68750000000006, 80%, 47%, 1);
-    --x-0: 13%;
-    --y-0: 16%;
-    --x-1: 14%;
-    --c-1: hsla(185.37735849056605, 89%, 53%, 1);
-    --y-1: 89%;
-    --x-2: 23%;
-    --c-2: hsla(264, 73%, 3%, 1);
-    --y-2: 23%;
-    ;
-    background-color: hsla(272, 86%, 9%, 1);
-    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 1288 1288' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E"), radial-gradient(circle at var(--x-0) var(--y-0), var(--c-0) var(--s-start-0), transparent var(--s-end-0)), radial-gradient(circle at var(--x-1) var(--y-1), var(--c-1) var(--s-start-1), transparent var(--s-end-1)), radial-gradient(circle at var(--x-2) var(--y-2), var(--c-2) var(--s-start-2), transparent var(--s-end-2));
-    animation: hero-gradient-animation 8s linear infinite alternate;
-    background-blend-mode: overlay, overlay, normal, normal;
+    background-color: hsla(357, 100%, 50%, 1);
+    background-image: radial-gradient(circle at 0% 99%, hsla(41, 100%, 50%, 1) 0%, transparent 67%), radial-gradient(circle at 46% 94%, hsla(357, 100%, 50%, 1) 0%, transparent 81%), radial-gradient(circle at 93% 95%, hsla(266, 100%, 23%, 1) 0%, transparent 66%), radial-gradient(circle at 89% 8%, hsla(236, 100%, 9%, 1) 0%, transparent 150%);
+    background-blend-mode: normal, normal, normal, normal;
 }
 .pelicula-card {
   background: linear-gradient(135deg, #2b2b2b, #1a1a1a);
@@ -289,22 +152,25 @@
   }
 }
 .botones-acciones {
-  margin-top: auto; /* Empuja los botones al fondo del contenedor */
   display: flex;
-  justify-content: flex-end;
-  gap: 12px;
+  justify-content: space-between;
+  gap: 8px;
+  margin-top: 10px;
 }
 
 .botones-acciones button {
-  background-color: #1e88e5;
+  padding: 6px 10px;
+  font-size: 0.85rem;
+  background-color: #007bff;
   color: white;
   border: none;
-  padding: 6px 12px;
-  margin-right: 10px;
-  border-radius: 8px;
+  border-radius: 6px;
   cursor: pointer;
-  transition: background-color 0.3s;
+  display: flex;
+  align-items: center;
+  transition: background 0.3s;
 }
+
 
 /* Icono margen */
 .botones-acciones button svg {
@@ -323,7 +189,7 @@
   transition: transform 0.25s cubic-bezier(0.68, -0.55, 0.27, 1.55);
 }
 .botones-acciones button:hover {
-  opacity: 0.9;
+  background-color: #0056b3;
 }
 
 /* Botón Eliminar */
@@ -361,17 +227,16 @@
 
 .flip-card {
   background-color: transparent;
-  width: 100%;
-  height: 100%;
-  perspective: 1000px; /* Para efecto 3D */
+  width: 250px;
+  height: 370px;
+  perspective: 1000px;
 }
 
 .flip-card:hover .flip-card-inner {
   transform: rotateY(180deg);
 }
 
-.flip-card-front, 
-.flip-card-back {
+.flip-card-front, .flip-card-back {
   position: absolute;
   width: 100%;
   height: 100%;
@@ -380,7 +245,7 @@
   overflow: hidden;
 }
 
-.pelicula-card:hover .flip-card-inner {
+.flip-card:hover .flip-card-inner {
   transform: rotateY(180deg);
 }
 
@@ -389,42 +254,47 @@
   position: absolute;
   width: 100%;
   height: 100%;
-  border-radius: 15px;
   backface-visibility: hidden;
+  border-radius: 16px;
   overflow: hidden;
-}
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+} 
 
 .flip-card-front {
   background: linear-gradient(135deg, #4e4376, #2b5876);
-  color: white;
+  color: rgb(0, 0, 0);
   padding: 16px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  box-shadow: 0 4px 8px rgba(255, 255, 255, 0.2);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 }
 
 .flip-card-back {
-  background-color: #111; /* oscuro pero no negro absoluto */
-  color: #fff;
-  padding: 20px;
+  background: rgba(15, 15, 15, 0.95);
+  color: white;
+  transform: rotateY(180deg);
+  padding: 16px;
   display: flex;
-  flex-direction: column;      /* apilar elementos verticalmente */
-  justify-content: space-between; /* separa texto y botones */
-  border-radius: 16px;
-  box-sizing: border-box;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 
-.flip-card-back img {
+/*.flip-card-back img {
   width: 100%;
   height: 100%;
-  object-fit: contain; /* Muestra todo el poster sin recortarlo */
-  padding: 10px;        /* Añade espacio alrededor para que no quede pegado */
-  border-radius: 12px;  /* Mantén bordes suaves */
-  background-color: #000; /* Fondo negro para contraste */
-}
+  object-fit: contain; 
+  padding: 10px;        
+  border-radius: 12px;  
+  background-color: #000000; 
+}*/
 
+.flip-card-front img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
 .contenedor-tarjetas {
   display: flex;
   flex-wrap: wrap;
@@ -433,15 +303,19 @@
   padding: 20px;
 }
 .flip-card-back h3 {
-  margin-bottom: 12px;
-  font-size: 1.3rem;
-  font-weight: 700;
-  color: #00aaff; /* un color azul vibrante para destacar */
+  font-size: 1.1rem;
+  margin-bottom: 10px;
+  border-bottom: 1px solid #fff3;
+  padding-bottom: 5px;
 }
-
 .flip-card-back p {
+  font-size: 0.9rem;
   margin: 6px 0;
-  font-size: 1rem;
-  line-height: 1.3;
-  color: #ccc;
+}
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.8s ease-in-out;
+  transform-style: preserve-3d;
 }
