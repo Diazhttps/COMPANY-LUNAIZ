@@ -12,6 +12,9 @@ function Peliculas({ filtroBusqueda, setFiltroBusqueda }) {
   const [peliculaEditId, setPeliculaEditId] = useState(null);
   const [paginaActual, setPaginaActual] = useState(1);
   const peliculasPorPagina = 10;
+  const [ordenPresupuesto, setOrdenPresupuesto] = useState(''); // 'asc' o 'desc'
+const [productoraSeleccionada, setProductoraSeleccionada] = useState('');
+
 
   const formatearNombreArchivo = (titulo) =>
     titulo.toLowerCase().replace(/\s+/g, '_').replace(/[^a-z0-9_]/g, '');
@@ -46,6 +49,14 @@ function Peliculas({ filtroBusqueda, setFiltroBusqueda }) {
     fetchPeliculas();
   }, []);
 
+  useEffect(() => {
+  window.scrollTo({
+    top: 0,
+    behavior: 'smooth' // puedes usar 'auto' si no quieres la animación
+  });
+}, [paginaActual]);
+
+
   const eliminarPelicula = async (id) => {
     if (!window.confirm('¿Seguro que quieres eliminar esta película?')) return;
 
@@ -75,15 +86,29 @@ function Peliculas({ filtroBusqueda, setFiltroBusqueda }) {
     setPeliculaEditId(null);
   };
 
-  const peliculasFiltradas = peliculas.filter((peli) => {
+  const peliculasFiltradas = peliculas
+  .filter((peli) => {
     const texto = filtroBusqueda.toLowerCase();
-    return (
+    const coincideBusqueda =
       peli.titulo.toLowerCase().includes(texto) ||
       peli.director.toLowerCase().includes(texto) ||
       peli.actores.toLowerCase().includes(texto) ||
       peli.presupuesto.toString().includes(texto) ||
-      peli.casa_productora.toLowerCase().includes(texto)
-    );
+      peli.casa_productora.toLowerCase().includes(texto);
+
+    const coincideProductora =
+      !productoraSeleccionada || peli.casa_productora === productoraSeleccionada;
+
+    return coincideBusqueda && coincideProductora;
+  })
+  .sort((a, b) => {
+    if (ordenPresupuesto === 'asc') {
+      return a.presupuesto - b.presupuesto;
+    } else if (ordenPresupuesto === 'desc') {
+      return b.presupuesto - a.presupuesto;
+    } else {
+      return 0; // sin orden
+    }
   });
 
   const totalPaginas = Math.ceil(peliculasFiltradas.length / peliculasPorPagina);
@@ -92,6 +117,9 @@ function Peliculas({ filtroBusqueda, setFiltroBusqueda }) {
     (paginaActual - 1) * peliculasPorPagina,
     paginaActual * peliculasPorPagina
   );
+
+  const productorasUnicas = [...new Set(peliculas.map((p) => p.casa_productora))];
+
 
   return (
     <div className="movies-container">
@@ -135,6 +163,41 @@ function Peliculas({ filtroBusqueda, setFiltroBusqueda }) {
           No se encontraron resultados para tu búsqueda.
         </motion.p>
       )}
+
+      <div className="filtros-container">
+  <div className="filtro-item">
+    <label htmlFor="presupuesto">
+      💰 Presupuesto
+    </label>
+    <select
+      id="presupuesto"
+      value={ordenPresupuesto}
+      onChange={(e) => setOrdenPresupuesto(e.target.value)}
+    >
+      <option value="">Sin orden</option>
+      <option value="asc">Menor a mayor</option>
+      <option value="desc">Mayor a menor</option>
+    </select>
+  </div>
+
+  <div className="filtro-item">
+    <label htmlFor="productora">
+      🏢 Productora
+    </label>
+    <select
+      id="productora"
+      value={productoraSeleccionada}
+      onChange={(e) => setProductoraSeleccionada(e.target.value)}
+    >
+      <option value="">Todas</option>
+      {productorasUnicas.map((prod, index) => (
+        <option key={index} value={prod}>
+          {prod}
+        </option>
+      ))}
+    </select>
+  </div>
+</div>
 
       <div className="peliculas-grid">
         {peliculasPaginaActual.map((peli, index) => (
